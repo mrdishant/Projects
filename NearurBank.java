@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class NearurBank {
+	Image i;
 	JFrame fr;
 	JPanel ptil,pnew,pret;
 	JButton newc,ret;
@@ -22,10 +23,11 @@ public class NearurBank {
 	
 	public NearurBank() {
 		
+		i=new Image();
 		fr=new JFrame("Bank");
 		
 		ltil=new JLabel("Welcome To Nearur Bank");
-		
+		ltil.setFont(new Font(Font.DIALOG,Font.BOLD,50));
 		ptil=new JPanel();
 		pnew=new JPanel();
 		pret=new JPanel();
@@ -33,13 +35,17 @@ public class NearurBank {
 		newc=new JButton("New Customer");
 		ret=new JButton("Returning Customer");
 		
+		newc.setFont(new Font(Font.DIALOG,Font.LAYOUT_LEFT_TO_RIGHT,25));
+		ret.setFont(new Font(Font.DIALOG,Font.PLAIN,25));
+		ptil.add(i.getPicLabel());
 		ptil.add(ltil);
+		
 		pnew.add(newc);
-		pret.add(ret);
+		pnew.add(ret);
+		
 		
 		fr.add(ptil);
 		fr.add(pnew);
-		fr.add(pret);
 		
 		
 		newc.addActionListener(new ActionListener() {
@@ -58,7 +64,7 @@ public class NearurBank {
 			
 		});
 		
-		fr.setLayout(new GridLayout(3,1));
+		fr.setLayout(new GridLayout(2,2));
 		fr.pack();
 		fr.setVisible(true);
 	}
@@ -270,17 +276,6 @@ public class NearurBank {
 		f.setVisible(true);	
 		
 	}
-	
-	void deposit() {
-		
-		
-		
-	}
-	
-	void withdraw() {
-		
-	}
-	
 	public static void main(String[] args) {
 		new NearurBank();	
 	}
