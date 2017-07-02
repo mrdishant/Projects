@@ -19,6 +19,7 @@ public class NearurBank {
 	JPanel ptil,pnew,pret;
 	JButton newc,ret;
 	JLabel ltil;
+	int[] a[];
 	protected boolean t;
 	
 	public NearurBank() {
